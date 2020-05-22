@@ -27,14 +27,13 @@ def get_homework_statuses(current_timestamp):
     homework_statuses = requests.get(
     'https://praktikum.yandex.ru/api/user_api/homework_statuses/',
     params=params,
-    headers=headers,
-)
+    headers=headers,)
     return homework_statuses.json()
 
 
 def send_message(message):
-    #proxy = telegram.utils.request.Request(proxy_url='socks5://5.133.194.171:12951')
-    bot = telegram.Bot(token=TELEGRAM_TOKEN) #, request=proxy)
+    proxy = telegram.utils.request.Request(proxy_url='socks5://5.133.194.171:12951')
+    bot = telegram.Bot(token=TELEGRAM_TOKEN, request=proxy)
     return bot.send_message(chat_id=CHAT_ID, text=message)
 
 
