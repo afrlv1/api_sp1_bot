@@ -10,8 +10,8 @@ PRACTICUM_TOKEN = os.getenv("PRACTICUM_TOKEN")
 TELEGRAM_TOKEN = os.getenv('TELEGRAM_TOKEN')
 CHAT_ID = os.getenv('TELEGRAM_CHAT_ID')
 
-proxy = telegram.utils.request.Request(proxy_url='socks5://5.133.194.171:12951')
-bot = telegram.Bot(token=TELEGRAM_TOKEN, request=proxy)
+
+bot = telegram.Bot(token=TELEGRAM_TOKEN)
 
 
 def parse_homework_status(homework):
